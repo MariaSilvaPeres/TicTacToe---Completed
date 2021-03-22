@@ -18,6 +18,7 @@ export class BoardComponent implements OnInit {
   }
 
   //sdfsdfsdfd
+  
 
   newGame() {
     this.squares = Array(9).fill(null):
