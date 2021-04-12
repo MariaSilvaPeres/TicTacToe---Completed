@@ -1,1 +1,19 @@
-<p>board works!</p>
+<h1>Current Player: {{ player }} </h1>
+
+<button nbButton outline status="danger" (click)="newGame()">Start New Game</button>
+
+
+<!-- *ngIf is a structural directive, só mostra caso a condição à direita seja verdadeira  -->
+<h2 *ngIf="winner">
+  Player {{ winner }} won the game!
+</h2>
+
+<main>
+  <!-- adicionamos o *ngFor, to renderer this component multiple times, based on the array of squares. Se queremos ter acesso ao index, usamos o let i = index  -->
+  <!-- first we pass the value to the child component, and also binded to the click event to make it move in that index -->
+
+  <app-square *ngFor="let val of squares; let i = index" [value]="val" (click)="makeMove(i)">
+
+  </app-square>
+
+</main>
